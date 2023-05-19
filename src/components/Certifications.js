@@ -35,7 +35,11 @@ const Certifications = () => {
     return (
       <div style={{ textAlign: 'center' }}>
         <Card title={certification.title}>
-          <img src={certification.image} alt={certification.title} style={{ maxWidth: '100%', height: 'auto' }} />
+          <img
+            src={certification.image}
+            alt={certification.title}
+            style={{ maxWidth: '260px', height: 'auto' }} // Adjusted dimensions for smaller images
+          />
           <p>{certification.description}</p>
         </Card>
       </div>
