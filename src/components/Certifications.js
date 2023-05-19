@@ -34,7 +34,7 @@ const Certifications = () => {
   const certificationTemplate = (certification) => {
     return (
       <div style={{ textAlign: 'center' }}>
-        <Card title={certification.title}>
+        <Card title={certification.title} className="custom-card" style={{ boxShadow: 'none' }}>
           <img
             src={certification.image}
             alt={certification.title}
@@ -48,7 +48,7 @@ const Certifications = () => {
 
   return (
     <div>
-      <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '8px', fontSize: '28px' }}>Certifications</h2>
+      <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '8px', fontSize: '28px', padding: '20px' }}>Certifications</h2>
       <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
         <Carousel
           value={certifications}

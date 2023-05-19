@@ -14,11 +14,14 @@
     "primeicons": "^6.0.1",
     "primereact": "^9.4.0",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
     "react-collapse": "^5.1.1",
     "react-dom": "^18.2.0",
+    "react-pdf": "^6.2.2",
     "react-prime": "^1.0.3",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "react-spring": "^9.7.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -44,5 +47,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0"
   }
 }

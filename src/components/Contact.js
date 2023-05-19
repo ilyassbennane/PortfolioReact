@@ -14,7 +14,7 @@ const Contact = () => {
   return (
     <div className="contact-wrapper">
       <div>
-        <h2 className="contact-title">Contact Me</h2>
+        <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '8px', fontSize: '28px', padding: '20px' }}>Contact Me</h2>
       </div>
       <div className="contact-container">
         <form className="contact-form" onSubmit={handleSubmit}>

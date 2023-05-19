@@ -15,6 +15,10 @@ const educationStyles = {
     marginBottom: '10px',
     textAlign: 'center',
   },
+  animatedCard: {
+    position: 'relative',
+    transformOrigin: 'top',
+  },
   card: {
     padding: '0',
     margin: '0',
@@ -130,6 +134,7 @@ const Education = () => {
           </Collapse>
         </Card>
       </div>
+      
     ));
   };
 

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Card } from 'primereact/card';
 import { Button } from 'primereact/button';
 import { Chip } from 'primereact/chip';
+import { useSpring, animated } from 'react-spring';
+
 /* import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
  *//* import {faLaravel, faReact, faPython, faAlgolia, faGoogle, faJava } from '@fortawesome/free-brands-svg-icons';
  */
@@ -43,9 +45,6 @@ const Projects = () => {
     
   ];
 
-  const [expandedIndex, setExpandedIndex] = useState(-1);
-  const [expandedTechnologiesIndex, setExpandedTechnologiesIndex] = useState(-1);
-
 /*   const technologyIcons = {
     'Laravel-': faLaravel,
     'MySql-': faLaravel, // Example icon for MySql
@@ -56,6 +55,9 @@ const Projects = () => {
     'Dijkstra Algorithm-': faAlgolia, // Example icon for Dijkstra Algorithm
     'Google Maps API': faGoogle, // Example icon for Google Maps API
   }; */
+
+  const [expandedIndex, setExpandedIndex] = useState(-1);
+  const [expandedTechnologiesIndex, setExpandedTechnologiesIndex] = useState(-1);
 
   const handleDetailsClick = (index) => {
     setExpandedIndex(index === expandedIndex ? -1 : index);
@@ -71,25 +73,34 @@ const Projects = () => {
     }
   };
 
+  const animatedProps = useSpring({
+    opacity: 1,
+    transform: 'translateY(0)',
+    from: { opacity: 0, transform: 'translateY(-20px)' },
+    delay: 200,
+  });
+
   return (
     <div>
-      <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '8px', fontSize: '28px' }}>Projects</h2>
+      <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '8px', padding: '20px', fontSize: '28px' }}>
+        Projects
+      </h2>
       <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         {projects.map((project, index) => (
-          <Card
-            key={index}
-            title={<div style={{ textAlign: 'center', fontWeight: 'bold' }}>{project.name}</div>}
-            className="project-card"
-            style={{
-              width: '300px',
-              height: '550px',
-              margin: '20px',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-              overflow: 'hidden',
-              boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
-            }}
-          >
+          <animated.div key={index} style={animatedProps}>
+            <Card
+              title={<div style={{ textAlign: 'center', fontWeight: 'bold' }}>{project.name}</div>}
+              className="project-card"
+              style={{
+                width: '300px',
+                height: '550px',
+                margin: '20px',
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+                overflow: 'hidden',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)',
+              }}
+            >
             <div style={{ height: '150px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
               <img
                 src={project.image}
@@ -161,7 +172,8 @@ const Projects = () => {
                 </div>
               )}
             </div>
-          </Card>
+            </Card>
+          </animated.div>
         ))}
       </div>
     </div>
