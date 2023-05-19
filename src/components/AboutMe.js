@@ -17,10 +17,16 @@ const AboutMe = () => {
     maxWidth: '100%',
     height: 'auto',
     marginBottom: '10px',
+    order: 2, // Added CSS property to change the order of elements in flexbox
+  };
+
+  const descriptionStyle = {
+    color: '#666',
+    order: 1, // Added CSS property to change the order of elements in flexbox
   };
 
   const description = (
-    <p style={{ color: '#666' }}>
+    <p style={descriptionStyle}>
       I am a student with a passion for web development. I enjoy building interactive and engaging web applications
       using the latest technologies. My goal is to continuously learn and grow as a developer and contribute to
       meaningful projects.
