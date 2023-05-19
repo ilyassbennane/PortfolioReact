@@ -11,7 +11,7 @@ const Header = () => {
     fontWeight: 'bold',
     textTransform: 'uppercase',
     letterSpacing: '1px',
-    margin: '0 10px',
+    margin: '10px',
     position: 'relative',
   };
 
@@ -20,16 +20,17 @@ const Header = () => {
     borderBottom: '2px solid white',
   };
 
+  const containerStyle = {
+    textAlign: 'center',
+    background: '#446688',
+    padding: '5px',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+  };
+
   return (
-    <div
-      style={{
-        textAlign: 'center',
-        background: '#446688',
-        padding: '5px',
-        display: 'flex',
-        justifyContent: 'center',
-      }}
-    >
+    <div style={containerStyle}>
       <Link to="/" style={linkStyle} activeStyle={activeLinkStyle}>
         <FontAwesomeIcon icon={faHome} style={{ marginRight: '5px' }} />
         Home

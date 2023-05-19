@@ -8,23 +8,24 @@ import Footer from './components/Footer';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
 
-
 const App = () => {
   return (
     <Router>
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Header />
 
-        <Routes>
-          <Route path="/" element={<AboutMe />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/certifications" element={<Certifications />} />
-        </Routes>
-      </div>
-      <Footer />
+        <div style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/certifications" element={<Certifications />} />
+          </Routes>
+        </div>
 
+        <Footer />
+      </div>
     </Router>
   );
 };

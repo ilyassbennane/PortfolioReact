@@ -22,11 +22,12 @@ const Certifications = () => {
       image: 'java_basic_certificate.png',
     },
     {
-        id: 3,
-        title: 'Python Fundamentals',
-        description: 'Mastered Python programming, data manipulation, and problem-solving. Ready to develop dynamic applications and automate tasks.',
-        image: 'PythonCertif.png',
-      }      
+      id: 3,
+      title: 'Python Fundamentals',
+      description:
+        'Mastered Python programming, data manipulation, and problem-solving. Ready to develop dynamic applications and automate tasks.',
+      image: 'PythonCertif.png',
+    },
     // Add more certifications as needed
   ];
 
@@ -34,7 +35,7 @@ const Certifications = () => {
     return (
       <div style={{ textAlign: 'center' }}>
         <Card title={certification.title}>
-          <img src={certification.image} alt={certification.title} style={{ maxWidth: '300px', height: 'auto' }} />
+          <img src={certification.image} alt={certification.title} style={{ maxWidth: '100%', height: 'auto' }} />
           <p>{certification.description}</p>
         </Card>
       </div>
@@ -44,12 +45,14 @@ const Certifications = () => {
   return (
     <div>
       <h2 style={{ textAlign: 'center', color: '#333', marginBottom: '8px', fontSize: '28px' }}>Certifications</h2>
-      <Carousel
-        value={certifications}
-        itemTemplate={certificationTemplate}
-        activeIndex={activeIndex} // Set the active index
-        onChange={(e) => setActiveIndex(e.index)} // Update the active index on change
-      />
+      <div style={{ maxWidth: '100%', overflow: 'hidden' }}>
+        <Carousel
+          value={certifications}
+          itemTemplate={certificationTemplate}
+          activeIndex={activeIndex} // Set the active index
+          onChange={(e) => setActiveIndex(e.index)} // Update the active index on change
+        />
+      </div>
     </div>
   );
 };
